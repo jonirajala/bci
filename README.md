@@ -1,1 +1,2 @@
-# bci
+# Studying brains and bci devices
+
