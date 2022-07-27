@@ -1,24 +1,23 @@
 from statistics import mean
+import matplotlib.pyplot as plt
 
 from transform_data import load_and_transform_data
 #ret = {"delta" : [], "theta lower" : [], "theta upper" : [],  "alpha lower" : [], "alpha upper" : [],"beta lower" : [], "beta upper" : [], "gamma" : [], "gamma upper": []}
 
 if __name__ == "__main__":
-    print("Loading data...")
     data = load_and_transform_data(transform="continious")
-    print("Data loading ready!")
-    print(data['alert'])
     averages = {"alert" : [], "notalert": []}
     for state in data.keys():
         for freq_index in range(len(data[state][0])):
-            print(data[state][0][freq_index])
-            averages[state].append(mean( [sample[freq_index] for sample in data[state]] ))
-        # print(data[state])
-        # for freq in data[state].keys():
-        #     averages[state].append(mean(sample[freq] for sample in data[state]))
+            averages[state].append(mean([sample[freq_index] for sample in data[state]]))
+        #ret = {"delta" : [], "theta lower" : [], "theta upper" : [],  "alpha lower" : [], "alpha upper" : [],"beta lower" : [], "beta upper" : [], "gamma" : [], "gamma upper": []}
+    print("delta, theta lower, theta upper, alpha lower, alpha upper, beta lower, beta upper. gamma, gamma upper")
+    print(averages['alert'])
+    print(averages["notalert"])
 
-    print(averages)
+    fig, ax = plt.subplots(2)
+    x = [i for i in range(1,10)]
 
-
-
-    
+    ax[0].bar(x, averages["alert"])
+    ax[1].bar(x, averages["notalert"])
+    plt.show()

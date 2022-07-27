@@ -1,6 +1,5 @@
 from serial import Serial
 import glob
-from base64 import b32decode
 
 class BaseBCIConnector:
     def connect(self):
@@ -34,7 +33,11 @@ class EEGClickConnector(BaseBCIConnector):
 
     def read(self):
         try:
+
             signal = self.connection.readline().decode().strip()
+
+            #bytesToRead = self.connection.inWaiting()
+            #signal = self.connection.read(bytesToRead).decode().strip()
         except Exception as e:
             print(e)
             exit()

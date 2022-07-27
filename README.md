@@ -24,6 +24,19 @@ Different parts of the brain get stimulated in a particular manner during medita
 - The parietal lobe, which gives you a sense of time also slows down, helping to lower your stress and anxiety levels.
 - The reticular keeps your brain alert and helps you respond to situations. During meditation, the reticular activity slows down, allowing you to keep calm and be peaceful.
 
+
+
+Delta (1-3Hz): sleep
+Theta (4-7Hz): relaxed, meditative
+Low Alpha (8-9Hz): eyes closed, relaxed
+High Alpha (10-12Hz)
+Low Beta (13-17Hz): alert, focused
+High Beta (18-30Hz)
+Low Gamma (31-40Hz): multi-sensory processing
+High Gamma (41-50Hz)
+
+https://neurofeedbackalliance.org/understanding-brain-waves/
+
 ### Event related potential
 = Electrical impulse in brain caused by single event
 To capture these it is good to filter out regular brain activity
@@ -51,6 +64,67 @@ These electrodes are made of silver chloride (AgCl). A gel is used which
  creates a conductive path between the skin and the electrode for the flow of current.
  Electrodes that do not use gels, called ‘dry’ electrodes are made of materials such as
  titanium and stainless-steel.
+
+
+
+
+<h3> Companies with commercial bci machine:</h3>
+
+- Emotiv
+  - Controversy: Emotiv has made access to raw data a separate paid option and implemented some countermeasures in order to deter creation of third-party software able to interoperate to headsets (more precisely their USB dongles, the project authors believe that the data flowing between a dongle and a headset is unencrypted) produced by Emotiv.[21] Despite that, free software having access to the data captured by a headset has been created.[22]
+  - https://github.com/openyou/emokit
+  - 5 channel BCI for 499$ (Emotiv Insight 2.0)
+    - Bluetooth
+    - Sampling rate: 128
+    - Frequency response: 0.5-43Hz, digital notch filters at 50Hz and 60Hz
+    - Filtering: Built in digital 5th order Sinc filter
+    - Provides different metrics but also RAW EEG
+  
+- Neurosky
+  - For a while been out of stock
+  
+- OpenBCI
+  - Open source tools for biosencing
+  - Low-cost Biosensing Starter Kit with 4 channels for 695$
+    - Board($ 374.99), dongle, electrodes, cables, headband($ 229.99)
+    - Truly open source
+    - Data is sampled at 200Hz
+    - Bluetooth
+    - Ganglion has a bandpass filter which cuts out any frequency below 0.3 Hz. 
+    - Downside is that the headset is mabye not that robust as in commercial products
+  
+- Muse
+  - EEG powered mediation & sleep
+  - Muse 2, 223.98€
+    - EEG + PULSE(Heart) + ACCELOMETER(Body) + GYROSCOPE(Breath)
+    - Some kind of mobile app, no raw EEG availble
+      - https://hackaday.io/project/169262-muse-eeg-hacking (some advances on reverse engineering side)
+
+<br>
+
+---
+
+<h3> EEG boards:</h3>
+
+- EEG CLICK, 40€
+  - 1 Channel
+
+
+- Unicorn Naked BCI, 890,00 €
+  - 8 Channels
+  - Very little info on internet
+
+- HackEEG, $495.00 (8 channels)
+  - This looks extremely good
+  - Popular among companiesä and univesities' research
+  - 8, 16, 32 Channels
+  - Arduino shield
+  - Compatible with open bci softwares(gui)
+  - Sample rate: 4,000 (32 channels) - 16,000 (8 channels)
+
+
+---
+
 
 ### FMRI
 Mittaa veren happipitoisuutta hermosolujen lähellä
@@ -98,3 +172,19 @@ Discrete wavelet transform
 - https://biomedpharmajournal.org/vol10no4/wavelet-transform-for-classification-of-eeg-signal-using-svm-and-ann/
 - https://www.researchgate.net/publication/3717417_Classification_of_EEG_signals_using_the_wavelet_transform
 - https://www.sciencedaily.com/releases/2010/03/100319210631.htm
+- https://scholarworks.uark.edu/cgi/viewcontent.cgi?article=1027&context=eleguht
+  - After the data was collected, the graduate student working on this project ran a test of the
+    data to determine the level of accuracy of the data. 150 samples of thinking right and left were
+    used to teach the machine learning program the patterns between a signal where an individual is
+    thinking right or left. Then, the other 100 samples of data of thinking right and left wereAfter the data was collected, the graduate student working on this project ran a test of the
+    data to determine the level of accuracy of the data. 150 samples of thinking right and left were
+    used to teach the machine learning program the patterns between a signal where an individual is
+    thinking right or left. Then, the other 100 samples of data of thinking right and left were
+    processed by the machine learning program to determine the type of signal. The machine
+    learning program had an accuracy of predictability of 96% for thinking right, and 97% for
+    thinking left, which is a great improvement from the previous readings that only had
+    approximately 80% **accuracy**
+        processed by the machine learning program to determine the type of signal. The machine
+        learning program had an accuracy of predictability of 96% for thinking right, and 97% for
+        thinking left, which is a great improvement from the previous readings that only had
+        approximately 80% accuracy
